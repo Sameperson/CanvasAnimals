@@ -10,7 +10,6 @@ function Animal() {
 
 Animal.prototype.x = Math.floor(Math.random() * (canvas.width - 40)) + 20;
 Animal.prototype.y = Math.floor(Math.random() * (canvas.height - 40)) + 20;
-
 Animal.prototype.update = function () {
     this.x += this.dx;
     this.y += this.dy;
@@ -34,9 +33,9 @@ Animal.prototype.draw = function ()  {
 
 function Bird() {
     Animal.call(this);
-    this.t = Math.floor(Math.random() * 4);
 }
 Bird.prototype = Object.create(Animal.prototype);
+Bird.prototype.t = Math.floor(Math.random() * 4);
 Bird.prototype.letter = "B";
 Bird.prototype.circleColor = "red";
 Bird.prototype.update = function () {
